@@ -1,0 +1,22 @@
+@import "../../common/css/variables";
+@import "../../common/css/rem";
+
+.block {
+	padding: 0 6px;
+	height: $font-size-base;
+	line-height: $font-size-base;
+	font-size: $font-size-sm;
+	background-color: $color-black-0;
+
+	&-inner {
+		color: $color-white;
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.block {
+		height: 20px;
+		line-height: 20px;
+		font-size: 14.6px;
+	}
+}

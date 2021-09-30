@@ -1,0 +1,88 @@
+@import '../../../../../common/css/variables';
+@import '../../../../../common/css/rem';
+
+.confirm {
+
+  &-close {
+    width: 19px;
+    height: 19px;
+  }
+
+  &-text {
+    text-align: center;
+
+    &-bold {
+      font-family: $font-bold;
+    }
+
+    &-tip {
+      margin: 48px 0 72px 0;
+    }
+
+    &-space {
+      margin: 32px 0;
+    }
+
+    &-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+  }
+
+  &-tips {
+    font-size: 14px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    word-break: break-all;
+  }
+
+  &-link {
+    color: #00A0A6;
+  }
+
+  &-btn {
+    margin: 32px 0;
+  }
+
+  &-remember {
+    margin: 29px 0;
+    text-align: center;
+
+    :global {
+      .ant-checkbox-inner {
+        width: 25px;
+        height: 25px;
+      }
+
+      .ant-checkbox-wrapper {
+        font-size: $font-size-base;
+        line-height: $line-height-en;
+      }
+
+      .ant-checkbox + span {
+        padding: 0 12px;
+      }
+    }
+  }
+
+  :global {
+    .ant-modal-content {
+      border: 1px solid $color-border-base;
+      border-radius: 25px;
+      box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.50);
+    }
+
+    .ant-modal-body {
+      padding: 29px 35px 25px 29px;
+      font-size: $font-size-base;
+      line-height: $line-height-en;
+      color: $color-black-0;
+    }
+
+    .ant-modal-close-x {
+      margin: 10px 17px;
+    }
+  }
+}

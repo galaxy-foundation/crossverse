@@ -1,0 +1,23 @@
+@import "../../common/css/variables";
+@import "../../common/css/rem";
+
+.more {
+	.wrap {
+		display: flex;
+		align-items: center;
+	}
+
+	.icon {
+		width: 10px;
+		height: 16px;
+		margin: 0 10px;
+		vertical-align: middle;
+	}
+
+	.text {
+		font-family: $font-medium;
+		font-size: $font-size-sm;
+		line-height: $line-height-en;
+		vertical-align: middle;
+	}
+}

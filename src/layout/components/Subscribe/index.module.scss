@@ -1,0 +1,106 @@
+@import "../../../common/css/variables";
+@import "../../../common/css/rem";
+
+.subscribe {
+	line-height: $line-height-en;
+
+	&-normal {
+		background-color: $color-brand;
+		border-radius: 6px;
+		padding: rem(46px);
+		display: flex;
+	}
+
+	&-simple {
+		margin: 10px 0;
+	}
+
+	&-loop {
+		width: 100%;
+		max-width: 470px;
+
+		&-title {
+			font-size: rem($font-size-xxl);
+			font-family: $font-bold;
+		}
+
+		&-content {
+			font-size: rem($font-size-xl);
+			font-family: $font-medium;
+			margin: rem(46px 0);
+		}
+	}
+
+	&-subTitle {
+		font-size: rem($font-size-xxl);
+		font-family: $font-medium;
+		margin-bottom: rem(40px);
+	}
+
+	&-community {
+		padding-left: 142px;
+	}
+
+	&-brand {
+		display: flex;
+		align-items: center;
+
+		a {
+			display: inline-block;
+		}
+	}
+
+	&-signup {
+		max-width: 458px;
+	}
+
+	&-icon {
+		width: rem(70px);
+		height: rem(70px);
+		margin-right: rem(22px);
+	}
+
+	&-icon-studio {
+		width: rem(141px);
+		height: rem(48px);
+		margin-left: rem(4px);
+	}
+
+	&-center {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.subscribe {
+		&-normal {
+			margin: 0 36px;
+			padding: 20px 42px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-loop {
+			max-width: 100%;
+			margin-bottom: 44px;
+
+			&-content {
+				font-size: rem($font-size-xl);
+				font-family: $font-medium;
+				margin: rem(46px 0 23px 0);
+			}
+		}
+
+		&-signup {
+			max-width: 100%;
+		}
+
+		&-community {
+			padding-left: 0;
+		}
+	}
+}

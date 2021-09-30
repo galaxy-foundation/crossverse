@@ -1,0 +1,75 @@
+@import "../common/css/variables";
+@import "../common/css/rem";
+
+.index {
+  .banner {
+    padding-top: 44px;
+  }
+
+  .titleRecommend {
+    margin-top: rem(24px);
+    margin-bottom: rem(37px);
+  }
+
+  .titleSale {
+    margin-bottom: rem(14px);
+  }
+
+  .titleResale {
+    color: #808080;
+  }
+
+  .cardNFT {
+    margin-bottom: rem(93px);
+  }
+
+  .cardSale {
+    margin-bottom: rem(66px);
+  }
+
+  .cardSaleRow {
+
+  }
+
+  .more {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 rem(10px);
+  }
+
+  .carouselRow {
+    display: flex !important;
+  }
+}
+
+.notFound {
+  .title {
+    margin: rem(200px) 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .index {
+    .banner {
+      padding: 0;
+    }
+
+    .cardSaleRow {
+      margin-bottom: 44px;
+    }
+
+    .titleRecommend {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .titleResale {
+      font-size: 16px;
+    }
+
+    .cardNFT, .cardSale {
+      padding: 0 36px;
+    }
+  }
+}

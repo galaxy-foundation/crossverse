@@ -1,0 +1,24 @@
+@import "../../../common/css/variables";
+
+.pageTitle {
+	font-size: $font-size-xxl;
+	line-height: $line-height-en;
+	color: $color-black-0;
+	text-align: center;
+
+	.bold {
+		font-family: $font-bold;
+	}
+
+	.bolder {
+		font-family: $font-bolder;
+	}
+
+	.medium {
+		font-family: $font-medium;
+	}
+
+	@media only screen and (max-device-width: $breakpoint-sm) {
+		font-size: $font-size-base;
+	}
+}

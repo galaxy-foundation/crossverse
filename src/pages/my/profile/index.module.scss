@@ -1,0 +1,113 @@
+@import "../../../common/css/rem";
+@import "../../../common/css/variables";
+
+.profile {
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    line-height: 1.5715;
+    list-style: none;
+
+    th {
+        color: #888;
+        border-bottom: 1px solid #888;
+        .center {
+            text-align: center;
+        }
+        .right {
+            text-align: right;
+        }
+    }
+    td, th {
+        padding: 16px 16px;
+        overflow-wrap: break-word;
+    }
+  }
+
+  .order {
+    margin-top: 66px;
+  }
+
+  .title {
+    padding: rem(70px) 0;
+    text-align: center;
+  }
+
+  .titleWithLink {
+    text-align: left;
+    margin-bottom: rem(28px);
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .titleExtra {
+    padding-left: 40px;
+  }
+
+  .subTitle {
+    font-size: $font-size-xxl;
+    line-height: $line-height-en;
+    padding-top: 20px;
+    padding-bottom: 48px;
+  }
+
+  .clipAddress {
+    display: inline-block;
+    max-width: 236px;
+
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .profile {
+    .body {
+      padding: 0 16px;
+    }
+
+    .purchased {
+      .titlePadding {
+        margin-bottom: 42px;
+      }
+    }
+
+    .purchasedList {
+      padding-right: 28px;
+      padding-left: 28px;
+    }
+
+    .order {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .titleWithLink {
+      & > div {
+        justify-content: space-between;
+      }
+    }
+
+    .titlePadding {
+      padding: 0;
+    }
+
+    .titleExtra {
+      padding-left: 0;
+    }
+
+    .subTitle {
+      font-size: 27px;
+      padding-top: 30px;
+      padding-bottom: 16px;
+    }
+
+    .transaction {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+}

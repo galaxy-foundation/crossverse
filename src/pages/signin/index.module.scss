@@ -1,0 +1,75 @@
+@import "../../common/css/variables";
+@import "../../common/css/rem";
+
+.login {
+  .card {
+    margin: 54px 0 18px 0;
+    padding: 94px 0;
+    background: $color-bg-grey;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: $font-size-base;
+    margin-bottom: 36px;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 457px;
+  }
+
+  .formItem {
+    margin-bottom: 28px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 0 22px;
+    font-size: $font-size-sm;
+    font-family: $font-medium;
+    line-height: $line-height-en;
+
+    a {
+      color: $color-success;
+    }
+  }
+
+  .input {
+    padding: 16px 22px 13px 22px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .login {
+    .card {
+      margin: 0 0 42px 0;
+      padding: 70px 0;
+      border-radius: 0;
+    }
+
+    .title {
+      font-size: $font-size-sm;
+      margin-bottom: 26px;
+    }
+
+    .form {
+      padding: 0 24px;
+    }
+
+    .formItem {
+      margin-bottom: 20px;
+    }
+
+    .links {
+      padding: 0 12px 0 17px;
+      font-size: 13.5px;
+    }
+
+    .input {
+      padding: 13px 17px 11px 17px;
+      font-size: 13.5px;
+    }
+  }
+}

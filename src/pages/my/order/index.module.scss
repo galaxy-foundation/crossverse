@@ -1,0 +1,38 @@
+@import "../../../common/css/rem";
+@import "../../../common/css/variables";
+
+.order {
+  margin-bottom: 232px;
+
+  .title {
+    padding: rem(70px 0);
+  }
+
+  .subTitle {
+    padding-bottom: rem(32px);
+    font-size: 27px;
+    text-align: left;
+  }
+
+  .card {
+    margin-bottom: 232px;
+  }
+
+  .cardPadding {
+    padding: 0 16px;
+  }
+
+  .cardWon {
+    margin-bottom: rem(70px);
+  }
+
+  .cardBid {
+    margin-bottom: rem(70px);
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .order {
+    margin-bottom: 0;
+  }
+}

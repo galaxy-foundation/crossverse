@@ -1,0 +1,14 @@
+@import "../../common/css/variables";
+@import "../../common/css/rem";
+
+.dialog {
+    .item {
+        margin-bottom: 5px;
+    }
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #d9d9d9;
+        outline: none;
+    }
+}

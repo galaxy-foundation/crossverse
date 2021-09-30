@@ -1,0 +1,19 @@
+@import "../../common/css/variables";
+
+.text-status-primary {
+	color: $color-success;
+}
+
+.text-status-secondary {
+	color: $color-grey-2;
+}
+
+.text-status-disabled {
+	color: $color-black-3;
+}
+
+.text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

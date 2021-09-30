@@ -1,0 +1,93 @@
+@import "../../common/css/rem";
+@import "../../common/css/variables";
+
+.input {
+	font-family: $font-medium;
+	font-size: $font-size-sm;
+	line-height: $line-height-en;
+	border: 1px solid $color-border-base;
+	border-radius: 10px;
+	color: $color-black-0;
+
+	&-circle {
+		border: rem(2px) solid #DEDEDE;
+		box-shadow: 0 2px 24px -10px rgba(0, 0, 0, 0.50);
+		border-radius: 33.5px;
+	}
+
+	&-group {
+		padding: 0;
+		overflow: hidden;
+
+		:global {
+			.ant-input {
+				border: none;
+				font-size: $font-size-base;
+				font-family: $font-medium;
+				line-height: $line-height-en;
+			}
+
+			.ant-input-group {
+				color: $color-black-0;
+			}
+
+			.ant-input:focus, .ant-input-focused {
+				box-shadow: none;
+			}
+
+			.ant-input-group-addon {
+				background: $color-bg;
+				border: none;
+				font-size: $font-size-base;
+				line-height: $line-height-en;
+				min-width: 160px;
+				text-align: left;
+				position: relative;
+
+				&:after {
+					content: ' ';
+					width: 1px;
+					height: 40px;
+					background: #333333;
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+				}
+			}
+
+			.ant-input-group-addon, .ant-input {
+				padding: 18px 20px 18px 30px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.input {
+		&-circle {
+			box-shadow: 0 2px 18px -8px rgba(0, 0, 0, 0.50);
+			border-radius: 25.12px;
+		}
+
+		&-group {
+			padding: 0;
+
+			:global {
+				.ant-input-group-addon {
+					background: $color-bg;
+					border: none;
+					font-size: $font-size-sm;
+					min-width: 104px;
+				}
+
+				.ant-input-group-addon, .ant-input {
+					padding: 14px 12px;
+				}
+			}
+		}
+	}
+}
+
+

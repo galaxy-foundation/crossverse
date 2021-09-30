@@ -1,0 +1,67 @@
+@import "../../../../common/css/variables";
+@import "../../../../common/css/rem";
+
+.dropdown {
+	padding: 0;
+
+	&-content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-head {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: 18px;
+	}
+
+	&-divider {
+		height: 1px;
+		background-color: $color-border-darker;
+	}
+
+	&-links {
+		flex: 1;
+
+		&-nav {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		&-item {
+			margin: 4px 0;
+			padding: 8px 0;
+		}
+	}
+
+	&-logout {
+		margin-bottom: 14px;
+
+		a {
+			color: #00A0A6;
+		}
+	}
+
+	:global {
+		.ant-popover-arrow {
+			display: none;
+		}
+
+		.ant-popover-inner-content {
+			width: 320px;
+			height: 540px;
+			padding: 24px 24px 24px 20px;
+			font-size: $font-size-base;
+			font-family: $font-medium;
+			line-height: $line-height-en;
+			color: $color-black-0;
+			background: $color-bg;
+			border: 1px solid $color-border-base;
+			border-radius: 10px;
+			box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.50);
+		}
+	}
+}

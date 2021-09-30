@@ -1,0 +1,36 @@
+@import "../../../common/css/rem";
+@import "../../../common/css/variables";
+
+.purchased {
+  .title {
+    padding: rem(70px 0 64px 0);
+  }
+
+  .cardList {
+
+  }
+
+  .card {
+
+  }
+
+  .btn {
+    margin: 16px 0;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .purchased {
+    .cardList {
+      padding: 0 38px;
+    }
+
+    .card {
+      margin-bottom: 58px;
+    }
+
+    .btn {
+      height: 70px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../../common/css/variables";
+@import "../../../common/css/rem";
+
+$dot-size: rem(10px);
+
+.carouselBanner {
+	padding: 0 0 54px 0;
+
+	:global {
+		.slick-list {
+			border: 1px solid $color-border-base;
+			box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+	}
+}
+
+.carouselNoPadding {
+	padding: 0;
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.carouselBanner {
+		padding: 0 0 35px 0;
+
+		:global {
+			.slick-list {
+				border-left: 0;
+				border-right: 0;
+				border-radius: 0;
+			}
+		}
+	}
+
+	.carouselNoPadding {
+		padding: 0;
+	}
+}

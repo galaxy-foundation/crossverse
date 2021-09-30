@@ -1,0 +1,56 @@
+@import "../../../../common/css/variables";
+@import "../../../../common/css/rem";
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(40px);
+
+  .input {
+    width: 100%;
+    max-width: 274px;
+    margin-right: rem(42px);
+    font-family: $font-medium;
+    font-size: $font-size-base;
+    line-height: $line-height-en;
+  }
+
+  .select {
+    :global {
+      .ant-select-selector {
+        height: $btn-height !important;
+        padding: 0 40px !important;
+        background: $color-bg-grey !important;
+        border: 1px solid $color-border-base !important;
+      }
+
+      .ant-select-selection-item {
+        min-width: 148px;
+        line-height: $btn-height !important;
+      }
+    }
+  }
+
+  .tag {
+    height: $btn-height;
+    line-height: $btn-height;
+    padding: 0 rem(40px);
+    background-color: $color-brand;
+    border: 1px solid #4DAFB2;
+    border-radius: $border-radius;
+
+    :global {
+      .ant-tag-close-icon {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .clear {
+    font-size: $font-size-base;
+    font-family: $font-medium;
+    line-height: $line-height-en;
+    color: $color-success;
+    padding: 0 6px;
+  }
+}

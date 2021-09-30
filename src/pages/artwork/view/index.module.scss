@@ -1,0 +1,379 @@
+@import "../../../common/css/variables";
+@import "../../../common/css/rem";
+
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .wrap {
+    width: 100%;
+    max-width: 1120px;
+  }
+
+  .cardDetail {
+    padding: 93px 0 54px 0;
+  }
+
+  .cardAbout {
+    margin-bottom: 120px;
+
+    .artist {
+      display: flex;
+      margin-bottom: 90px;
+    }
+
+    .avatar {
+      width: rem(200px);
+      height: rem(200px);
+      margin-right: rem(24px);
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .desc {
+      line-height: 1.77;
+    }
+
+    .num {
+      margin: rem(0 16px);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+  }
+
+  .makeOffer {
+    margin: 40px 0 20px 0;
+    text-align: center;
+
+    .btn {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .btnWrap {
+      height: 100px;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    line-height: 1.5715;
+    list-style: none;
+
+    th {
+        color: #888;
+        border-bottom: 1px solid #888;
+        .center {
+            text-align: center;
+        }
+        .right {
+            text-align: right;
+        }
+    }
+    td, th {
+        padding: 16px 16px;
+        overflow-wrap: break-word;
+    }
+  }
+}
+
+@media only screen and (max-device-width: $breakpoint-sm) {
+  .view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .wrap {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .cardDetail {
+      padding: 30px;
+    }
+
+    .cardAbout {
+      padding: 0 18px 0 26px;
+      margin-bottom: 120px;
+
+      .artist {
+        margin-bottom: 26px;
+      }
+
+      .desc {
+        line-height: 1.4;
+      }
+
+      .name {
+        font-size: 13px;
+      }
+
+      .num {
+        height: 12.5px;
+        width: 12.5px;
+        font-size: 9.75px;
+        line-height: 1;
+      }
+
+      .row {
+        margin-bottom: 6px;
+      }
+    }
+
+    .makeOffer {
+      margin: 40px 0 20px 0;
+      text-align: center;
+
+      .btn {
+        width: 100%;
+        height: 40px;
+        max-width: 210px;
+        line-height: 40px !important;
+      }
+
+      .btnWrap {
+        height: 100px;
+      }
+    }
+    table {
+        td, th {
+            padding: 3px 3px;
+            overflow-wrap: break-word;
+        }
+      }
+  }
+}
+
+
+.artworkView {
+  color: $color-black-0;
+  line-height: $line-height-en;
+
+  &-item {
+    min-width: 130px;
+    
+    div, a {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      color: #888;
+    }
+  }
+  &-name {
+    font-size: $font-size-xxl;
+  }
+  &-cmd {
+    color: rgb(59, 111, 255) !important;
+    cursor: pointer;
+    
+    &:hover {
+      color: rgb(0, 0, 206) !important;
+    }
+  }
+  
+
+  &-basic {
+    margin: 20px 0;
+  }
+
+  &-artist {
+    &-block {
+      margin: 0 14px;
+    }
+  }
+
+  &-views {
+    margin-left: 14px;
+
+    &-text {
+
+    }
+
+    &-block {
+      margin: 0 8px;
+    }
+  }
+
+  &-favorite {
+    &-icon {
+      margin: rem(0 8px);
+    }
+  }
+
+  &-trade {
+
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+  }
+
+  &-column {
+    display: flex;
+    align-items: center;
+  }
+
+  &-field {
+    display: flex;
+    align-items: flex-start;
+    padding: 11px 0;
+
+    &-label {
+      min-width: 200px;
+    }
+
+    &-value {
+      min-width: 200px;
+    }
+  }
+
+  &-alt {
+    font-size: $font-size-xxl;
+    display: flex;
+  }
+
+  &-fiat {
+    color: $color-grey-2;
+  }
+
+  &-icon {
+    &-eye {
+      width: 32px;
+      height: 17px;
+    }
+
+    &-heart {
+      width: 21px;
+      height: 19px;
+    }
+
+    &-eth {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &-submit {
+    margin-top: 55px;
+
+    &-btn {
+      height: 100px;
+      line-height: 100px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .artworkView {
+    margin-top: 44px;
+    &-cmd {
+      margin-left: 30px;
+      display: contents;
+      color: blue;
+      &:hover {
+        color: red;
+      }
+    }
+    
+    &-name {
+      font-size: 26px;
+    }
+
+    &-basic {
+      margin: 16px 0;
+    }
+
+    &-artist {
+      &-text {
+
+      }
+
+      &-block {
+        margin: 0 10px;
+      }
+    }
+
+    &-views {
+      margin-left: 14px;
+
+      &-text {
+        font-size: 11.43px;
+      }
+
+      &-block {
+        margin: 0 6px;
+      }
+    }
+
+    &-trade {
+
+    }
+
+    &-field {
+      display: flex;
+      align-items: flex-start;
+      padding: 8px 0;
+
+      &-label {
+        min-width: 162px;
+      }
+
+      &-value {
+        min-width: 162px;
+      }
+    }
+
+    &-alt {
+      font-size: 26px;
+    }
+
+    &-icon {
+      &-eye {
+        width: 26.6px;
+        height: 13.6px;
+      }
+
+      &-heart {
+        width: 17px;
+        height: 15.4px;
+      }
+
+      &-eth {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &-submit {
+      margin-top: 12px;
+
+      &-btn {
+        height: 64px;
+        line-height: 64px !important;
+      }
+    }
+  }
+}
+
+.offers {
+  .price {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    width: 20px;
+    margin: 0 6px;
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../../../common/css/variables";
+@import "../../../../common/css/rem";
+
+.submit {
+	position: relative;
+
+	.ctl {
+		padding: 18px 100px 14px 22px;
+		border: rem(2px) solid #DEDEDE;
+		box-shadow: rem(0 2px 24px -10px) rgba(0, 0, 0, 0.50);
+		border-radius: rem(33.5px);
+		font-size: rem($font-size-sm);
+	}
+
+	.btn {
+		position: absolute;
+		top: 14px;
+		right: 10px;
+		font-size: rem($font-size-sm);
+		line-height: $line-height-en;
+	}
+
+	.icon {
+		width: rem(10px);
+		margin: rem(0 16px);
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	:global {
+		.ant-btn {
+			height: 40px;
+			padding: rem(4px 8px);
+			background-color: transparent;
+			border: none;
+			box-shadow: none;
+			color: #BCBCBC;
+
+			&:active,
+			&:hover {
+				background: none;
+			}
+
+			&:after {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.submit {
+		.ctl {
+			padding: 8px 50px 8px 12px;
+		}
+
+		.btn {
+			position: absolute;
+			top: 6px;
+			right: 6px;
+		}
+
+		:global {
+			.ant-btn {
+				height: 20px;
+			}
+		}
+	}
+}

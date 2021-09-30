@@ -1,0 +1,22 @@
+@import "../../../common/css/variables";
+@import "../../../common/css/rem";
+
+.header {
+	padding: 0;
+	color: $color-black-0;
+
+	&-bordered {
+		border-bottom: 1px solid $color-border-base;
+	}
+
+	&-desktop {
+		background: transparent;
+		margin-top: 57px;
+	}
+
+	&-mobile {
+		height: auto;
+		line-height: 94px;
+		background: $color-bg;
+	}
+}

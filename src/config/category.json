@@ -1,0 +1,18 @@
+[
+	{
+		"value":0,
+		"label":"All Items"
+	},
+		{
+		"value":10,
+		"label":"Chocolate"
+	},
+	{
+		"value":20,
+		"label":"Strawberry"
+	},
+	{
+		"value":30,
+		"label":"Vanilla"
+	}
+]

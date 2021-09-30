@@ -1,0 +1,26 @@
+{
+	"1": {
+		"title": "Ethereum mainnet",
+		"rpc": "http://185.64.104.17",
+		"explorer": "https://etherscan.io",
+		"blocktime": 15,
+		"confirmations": 12,
+		"storefront": "",
+		"weth": {
+			"contract": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+			"precision": 6
+		}
+	},
+	"256": {
+		"title": "Huobi ECO Chain Testnet",
+		"rpc": "https://http-testnet.hecochain.com",
+		"explorer": "https://testnet.hecoinfo.com",
+		"blocktime": 3,
+		"confirmations": 1,
+		"storefront": "0x94b02d84A154378b6fE12B38e17d6F6E6d41B5cA",
+		"weth": {
+			"contract": "0xc209f1e9Eaea895cAbAC2873E8567768A864faf5",
+			"precision": 18
+		}
+	}
+}

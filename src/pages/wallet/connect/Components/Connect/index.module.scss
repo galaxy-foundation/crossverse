@@ -1,0 +1,59 @@
+@import '../../../../../common/css/variables';
+@import '../../../../../common/css/rem';
+
+.connect {
+  &-close {
+    width: 19px;
+    height: 19px;
+  }
+
+  &-text {
+    text-align: center;
+
+    &-bold {
+      font-family: $font-bold;
+    }
+
+    &-tip {
+      margin: 48px 0 72px 0;
+    }
+
+    &-space {
+      margin: 32px 0;
+    }
+
+    &-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+  }
+
+  &-input {
+    padding: 22px 30px;
+    font-size: $font-size-base;
+  }
+
+  &-btn {
+    margin: 32px 0;
+  }
+
+  :global {
+    .ant-modal-content {
+      border: 1px solid $color-border-base;
+      border-radius: 25px;
+      box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.50);
+    }
+
+    .ant-modal-body {
+      padding: 29px 35px 25px 29px;
+      font-size: $font-size-base;
+      line-height: $line-height-en;
+      color: $color-black-0;
+    }
+
+    .ant-modal-close-x {
+      margin: 10px 17px;
+    }
+  }
+}

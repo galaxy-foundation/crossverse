@@ -1,0 +1,17 @@
+@import "../../../common/css/rem";
+@import "../../../common/css/variables";
+
+.transaction {
+  .cardList {
+    margin-bottom: rem(309px);
+  }
+
+  .title {
+    padding: rem(70px) 0;
+  }
+
+  .clipAddress {
+    display: inline-block;
+    max-width: 236px;
+  }
+}

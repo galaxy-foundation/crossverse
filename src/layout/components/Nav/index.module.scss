@@ -1,0 +1,85 @@
+@import "../../../common/css/variables";
+@import "../../../common/css/rem";
+
+.nav {
+	flex-basis: 100%;
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+	margin: 8px 0;
+	position: relative;
+
+	&-avatar {
+		width: 53px;
+		height: 53px;
+	}
+
+	&-collapsed {
+		height: 0;
+		overflow: hidden;
+		transition: height 0.35s ease;
+	}
+
+	&-expand {
+		height: 340px;
+		transition: height 0.35s ease;
+	}
+
+	&-divider {
+		width: 1px;
+		position: relative;
+		padding: 0 8px 0 12px;
+
+		&:after {
+			display: block;
+			content: ' ';
+			background-color: $color-border-darker;
+			position: absolute;
+			width: 1px;
+			height: 38px;
+			top: 7.5px;
+		}
+	}
+
+	&-nav {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		line-height: 1.3;
+
+		&-item {
+			display: inline-block;
+			padding: 11px 19px;
+			font-size: $font-size-base;
+			line-height: inherit;
+			white-space: nowrap;
+		}
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.nav {
+		display: flex;
+		justify-content: flex-start;
+
+		&-collapsed {
+			margin: 0;
+		}
+
+		&-divider {
+			display: none;
+		}
+
+		&-nav {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			&-item {
+				padding: 11px 0;
+			}
+		}
+	}
+}
+

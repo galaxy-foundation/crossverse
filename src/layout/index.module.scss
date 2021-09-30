@@ -1,0 +1,23 @@
+@import "../common/css/variables";
+@import "../common/css/rem";
+
+.layout {
+	background: none;
+
+	&-footer {
+		padding: 0;
+		line-height: $line-height-en;
+		background: transparent;
+
+		&-copyright {
+			padding: rem(28px 0);
+			font-family: $font-bold;
+			text-align: center;
+		}
+
+		&-divider {
+			margin: 0;
+			border-top: 1px solid $color-border-base;
+		}
+	}
+}

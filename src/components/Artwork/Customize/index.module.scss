@@ -1,0 +1,80 @@
+@import "../../../common/css/variables";
+@import "../../../common/css/rem";
+
+.artworkCustomize {
+	font-family: $font-medium;
+	font-size: $font-size-base;
+	line-height: $line-height-en;
+
+	&-vertical {
+		&-padding {
+			padding-top: rem(44px);
+		}
+	}
+
+	&-horizontal {
+		display: flex;
+	}
+
+	&-thumbnail {
+		border-radius: 8px;
+		overflow: hidden;
+		max-width: 529px;
+
+		&-image {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		&-controls {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		&-icon {
+			padding: 12px 14px;
+
+			&-sound {
+				width: 26px;
+				height: 30px;
+			}
+
+			&-pause {
+				width: 15px;
+				height: 24px;
+			}
+		}
+	}
+
+	&-body {
+		width: 100%;
+		max-width: 529px;
+		margin-left: 76px;
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.artworkCustomize {
+		font-size: 19.5px;
+
+		&-body {
+			margin: 0;
+		}
+
+		&-thumbnail {
+			&-icon {
+				padding: rem(12px 14px);
+
+				&-sound {
+					width: 15.6px;
+					height: 17.7px;
+				}
+
+				&-pause {
+					width: 8.88px;
+					height: 14.16px;
+				}
+			}
+		}
+	}
+}

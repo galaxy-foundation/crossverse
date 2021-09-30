@@ -1,0 +1,117 @@
+@import "../../common/css/variables";
+@import "../../common/css/rem";
+
+.drop {
+  line-height: $line-height-en;
+  .offerv {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .btnView {
+    min-width: 320px;
+  }
+}
+
+.banner {
+  padding: 44px 0;
+}
+
+.count {
+  background: $color-brand;
+  text-align: center;
+
+  &-border {
+    border-top: 3px solid $color-border-base;
+    border-right: 1px solid $color-border-base;
+    border-bottom: 3px solid $color-border-base;
+    border-left: 1px solid $color-border-base;
+  }
+
+  &-text {
+    font-size: 66px;
+  }
+
+  &-time {
+    margin-top: 94px;
+    font-size: 132px;
+  }
+
+  &-padding {
+    padding: 100px 0;
+  }
+
+  &-padding-mobile {
+    padding: 24px 0;
+    border-bottom: 1px solid $color-border-base;
+  }
+}
+
+.offer {
+  &-head {
+    text-align: center;
+    padding: 110px 0;
+  }
+
+  &-title {
+    font-size: 88px;
+    font-family: $font-medium;
+    margin-bottom: 36px;
+  }
+
+  &-sub-title {
+    font-size: 60px;
+    font-family: $font-bolder;
+  }
+}
+
+.offerItem {
+  margin-bottom: 70px;
+
+  
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .banner {
+    padding: 0;
+  }
+
+  .count {
+    &-text {
+      font-size: $font-size-sm;
+    }
+
+    &-time {
+      margin-top: 24px;
+      font-size: $font-size-xxl;
+    }
+  }
+
+  .offer {
+    padding: 0 36px;
+
+    &-head {
+      padding: 44px 0 36px 0;
+    }
+
+    &-title {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    &-sub-title {
+      font-size: 24px;
+    }
+  }
+
+  .offerItem {
+    margin-bottom: 48px;
+
+    .btnView {
+      max-width: inherit;
+      margin-top: 32px;
+      height: 70px;
+      line-height: 70px;
+      font-size: $font-size-base;
+    }
+  }
+}

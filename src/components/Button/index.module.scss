@@ -1,0 +1,50 @@
+@import "../../common/css/rem";
+@import "../../common/css/variables";
+
+$btn-height-mobile: 70px;
+$btn-height-shadow: 6px;
+
+.button {
+
+	&-btn {
+		height: $btn-height - $btn-height-shadow;
+	}
+
+	:global {
+		.ant-btn {
+			font-family: $font-medium;
+			line-height: $line-height-en;
+			font-size: $font-size-xl;
+			text-shadow: none;
+		}
+
+		.ant-btn-primary {
+			background-color: #9CEAED;
+			border-color: $color-border-base;
+			border-radius: 8px;
+			border-bottom: none;
+			box-shadow: 0 6px #508C8E;
+			color: $color-black-0;
+		}
+
+		a.ant-btn {
+			line-height: $btn-height - $btn-height-shadow;
+		}
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.button {
+		height: $btn-height-mobile;
+
+		&-btn {
+			height: $btn-height-mobile - $btn-height-shadow;
+		}
+
+		:global {
+			.ant-btn {
+				font-size: $font-size-base;
+			}
+		}
+	}
+}

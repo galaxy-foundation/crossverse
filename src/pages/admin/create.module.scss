@@ -1,0 +1,53 @@
+@import "../../common/css/variables";
+@import "../../common/css/rem";
+
+.post {
+	.card {
+		margin: 0 0 18px 0;
+		padding: 60px 0;
+		border-radius: 8px;
+	}
+
+	.title {
+		font-size: $font-size-base;
+		margin-bottom: 36px;
+	}
+
+	.form {
+		width: 100%;
+		max-width: 457px;
+	}
+
+	.formItem {
+		margin-bottom: 32px;
+	}
+	.action {
+		position: absolute;
+		right: 0;
+	}
+	.links {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 16px 0 22px;
+		font-size: $font-size-sm;
+		font-family: $font-medium;
+		line-height: $line-height-en;
+
+		a {
+			color: $color-success;
+		}
+	}
+
+	.input {
+		padding: 16px 22px 13px 22px;
+	}
+	select {
+		width: 100%;
+		padding: 8px;
+		border: 1px solid #d9d9d9;
+		outline: none;
+	}
+	select:focus {
+		border: 1px solid #40a9ff;
+	}
+}

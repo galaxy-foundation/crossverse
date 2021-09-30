@@ -1,0 +1,54 @@
+@import "../../common/css/variables";
+@import "../../common/css/rem";
+
+.market {
+  .head {
+    padding: rem(70px) 0;
+  }
+
+  .body {
+
+  }
+
+  .card {
+    margin-bottom: 70px;
+  }
+
+  .title {
+    padding-bottom: rem(48px);
+  }
+
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .btn {
+    margin: 12px 0 20px 0;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .market {
+    .filter {
+      padding: 0 30px;
+    }
+
+    .select {
+      margin-bottom: 12px;
+    }
+
+    .body {
+      padding: 0 40px 0 30px;
+    }
+
+    .card {
+      margin-bottom: 56px;
+    }
+  }
+}

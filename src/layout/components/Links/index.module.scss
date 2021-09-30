@@ -1,0 +1,54 @@
+@import "../../../common/css/variables";
+@import "../../../common/css/rem";
+
+.links {
+	font-family: $font-medium;
+	line-height: $line-height-en;
+
+	&-block {
+		font-size: rem($font-size-sm);
+		padding: rem(48px 0 52px 0);
+	}
+
+	&-wrap {
+		display: flex;
+		flex-direction: column;
+		font-size: rem(28px);
+		padding: 15px 68px;
+	}
+
+	&-row {
+		text-align: center;
+
+		&-flex {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&-link {
+		padding: 0 18px;
+
+		&-large {
+			padding: 5px 0;
+		}
+	}
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+	.links {
+		&-block {
+			font-size: 9px;
+		}
+
+		&-row {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&-link {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@import "../../common/css/rem";
+@import "../../common/css/variables";
+
+.admin {
+	margin-top: 50px;
+	.cmd {
+		padding: 5px 10px;
+		color: rgb(43, 61, 161);
+		cursor: pointer;
+
+		&:hover {
+			color: rgb(21, 34, 109);
+		}
+	}
+	.title {
+		padding: rem(70px 0 64px 0);
+	}
+	table {
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 0;
+		line-height: 1.5715;
+		list-style: none;
+
+		th {
+			color: #888;
+			border-bottom: 1px solid #888;
+			.center {
+					text-align: center;
+			}
+			.right {
+					text-align: right;
+			}
+		}
+		td, th {
+			padding: 10px 10px;
+			overflow-wrap: break-word;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+@import "../../../common/css/rem";
+@import "../../../common/css/variables";
+
+.search {
+	border: 2px solid #DEDEDE;
+	box-shadow: 0 2px 24px -10px rgba(0, 0, 0, 0.50);
+	border-radius: 33.5px;
+	overflow: hidden;
+
+	&-padding {
+		padding: 20px 16px;
+	}
+
+	&-icon {
+		width: 23px;
+		height: 23px;
+	}
+
+	&-group {
+		padding: 0;
+
+		:global {
+			.ant-input {
+				border: none;
+				font-size: $font-size-sm;
+				font-family: $font-medium;
+				line-height: $line-height-en;
+				padding: 16px 24px;
+			}
+
+			.ant-input-group {
+				color: $color-black-0;
+			}
+
+			.ant-input:focus, .ant-input-focused {
+				box-shadow: none;
+			}
+
+			.ant-input-group-addon {
+				background: $color-bg;
+				border: none;
+				padding: 0 0 0 27px;
+			}
+		}
+	}
+
+	:global {
+		.ant-input-group-addon {
+			background-color: transparent;
+			border: none;
+		}
+	}
+}

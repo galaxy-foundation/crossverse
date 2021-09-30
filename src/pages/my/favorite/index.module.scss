@@ -1,0 +1,36 @@
+@import "../../../common/css/rem";
+@import "../../../common/css/variables";
+
+.favorite {
+  .cardList {
+    margin-bottom: 0;
+  }
+
+  .cardPadding {
+    padding: 0;
+  }
+
+  .title {
+    padding: rem(70px 0);
+  }
+
+  .favoriteItem {
+    margin-bottom: 70px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .favorite {
+    .cardList {
+      margin-bottom: 60px;
+    }
+
+    .cardPadding {
+      padding: 0 52px 0 38px;
+    }
+
+    .favoriteItem {
+      margin-bottom: 50px;
+    }
+  }
+}

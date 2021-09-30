@@ -1,0 +1,178 @@
+@import "../../../common/css/rem";
+@import "../../../common/css/variables";
+
+.account {
+  :global {
+    .ant-form-item {
+      color: $color-black-0;
+      font-size: 24px;
+      font-family: $font-medium;
+    }
+
+    .ant-form-item-label {
+      line-height: $line-height-en;
+    }
+
+    .ant-form-item-label > label {
+      font-size: $font-size-base;
+    }
+
+    .ant-switch {
+      min-width: 150px;
+      height: 80px;
+    }
+
+    .ant-switch-handle {
+      width: 70px;
+      height: 70px;
+      top: 5px;
+      left: 6px;
+    }
+
+    .ant-switch-checked .ant-switch-handle {
+      left: calc(100% - 70px - 6px);
+    }
+
+    .ant-switch-handle::before {
+      border-radius: 35px;
+    }
+  }
+
+  .card {
+    padding: 0 58px 178px 58px;
+  }
+
+  .title {
+    padding: rem(70px) 0;
+  }
+
+  .form {
+    margin-left: 126px;
+    max-width: 800px;
+
+    &-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  .input {
+    padding: 18px 30px;
+    font-size: $font-size-base;
+  }
+
+  .subscribe {
+    margin: 50px 0;
+
+    :global {
+      .ant-form-item-label {
+        padding-bottom: 32px;
+      }
+    }
+
+    &-content {
+      padding-left: 30px;
+    }
+
+    &-status {
+      height: 80px;
+      line-height: 80px;
+    }
+
+    &-text {
+
+    }
+  }
+
+  .password {
+    margin-bottom: 0;
+  }
+
+  .btnSave {
+    width: 320px;
+  }
+}
+
+
+@media only screen and (max-width: $breakpoint-sm) {
+  .account {
+    :global {
+      .ant-form-item {
+        color: $color-black-0;
+        font-size: 24px;
+        font-family: $font-medium;
+      }
+
+      .ant-form-item-label {
+        line-height: $line-height-en;
+      }
+
+      .ant-form-item-label > label {
+        font-size: $font-size-base;
+      }
+
+      .ant-switch {
+        min-width: 112px;
+        height: 60px;
+      }
+
+      .ant-switch-handle {
+        width: 52px;
+        height: 52px;
+        top: 4px;
+        left: 4px;
+      }
+
+      .ant-switch-checked .ant-switch-handle {
+        left: calc(100% - 52px - 4px);
+      }
+
+      .ant-switch-handle::before {
+        border-radius: 35px;
+      }
+    }
+
+    .card {
+      padding: 0 28px 72px 32px;
+    }
+
+    .avatar {
+      margin-bottom: 34px;
+    }
+
+    .form {
+      margin-left: 0;
+    }
+
+    .input {
+      padding: 18px 16px;
+      font-size: $font-size-base;
+    }
+
+    .subscribe {
+      margin: 50px 0;
+
+      &-content {
+        padding-left: 47px;
+      }
+
+      &-status {
+        height: 60px;
+        line-height: 60px;
+      }
+
+      &-text {
+        &-disabled {
+          color: #575757;
+        }
+      }
+    }
+
+    .password {
+      margin-bottom: 18px;
+    }
+
+    .btnSave {
+      width: 100%;
+    }
+  }
+}

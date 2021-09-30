@@ -1,0 +1,7 @@
+[
+  { "value": 10, "label": "Recently Listed" },
+  { "value": 30, "label": "Price: Low to high" },
+  { "value": 40, "label": "Price: High to low" },
+  { "value": 50, "label": "Most viewed" },
+  { "value": 60, "label": "Most favorited" }
+]
