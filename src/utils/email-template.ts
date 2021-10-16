@@ -104,7 +104,7 @@ export const Html_Reset = `<table width="100%" height="100%" cellpadding="0" cel
 											<tr>
 												<td style="font-size:14px;line-height:30px;color:#666;">
 													<br>Hi {{name}}, <br> <br>
-													We heard that you lost your GitHub password. Sorry about that!<br>
+													We heard that you lost your {{domain}} password. Sorry about that!<br>
 													But don’t worry!<br>
 													
 												</td>
