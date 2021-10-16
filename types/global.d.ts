@@ -27,6 +27,7 @@ declare interface ReducerState {
 declare interface Window  {
 	ethereum: any
 	Web3: any
+	initGeetest: any
 }
 
 declare interface ApiResponse {

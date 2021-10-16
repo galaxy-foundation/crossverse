@@ -65,6 +65,17 @@ export const formatTime = (time: number, offset = 8): string => {
 export const getLocalTime = (time?:number):string => (new Date(((time || now()) - new Date().getTimezoneOffset() * 60) * 1000).toISOString().slice(0,16))
 export const fromLocalTime = (time:string):number => (Math.round(new Date(time).getTime() / 1000))
 
+export const request = async (url: string): Promise<any> => {
+	const res = await fetch(url, {
+		mode: 'cors',
+		cache: 'no-cache',
+		credentials: 'same-origin',
+		headers: {'Content-Type': 'application/json'},
+		redirect: 'follow', 
+		referrerPolicy: 'no-referrer'
+	})
+	return await res.json()
+}
 
 export const call = async (url: string, json: any): Promise<any> => {
 	const res = await fetch(url, {
@@ -86,6 +97,7 @@ export const generateCode = (): string => {
 	return code
 }
 
+export const generatePassword = (): string => Math.random().toString(36).slice(2)
 export const toEther = (value: number): number => value / 1e6
 export const fromEther = (value: number): number => Math.round(value * 1e6)
 

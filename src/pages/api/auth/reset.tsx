@@ -1,13 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { register } from '@/utils/datamodel'
 import * as requestIp from 'request-ip'
+import { sendReset } from '@/utils/datamodel'
 const GeetestLib = require('@/geetestsdk/geetest_lib');
 
-
 export default async (req: NextApiRequest, res: NextApiResponse<ApiResponse>) => {
-	if (req.method === 'POST') {
-		const { alias, email, password, phone, code } = req.body
-		const ip = requestIp.getClientIp(req) || ''
+	const { email } = req.body
+	if (req.method === 'POST' && email) {
 		const gtLib = new GeetestLib(process.env.GEETEST_ID, process.env.GEETEST_KEY);
 		const challenge = req.body[GeetestLib.GEETEST_CHALLENGE];
 		const validate = req.body[GeetestLib.GEETEST_VALIDATE];
@@ -15,7 +13,8 @@ export default async (req: NextApiRequest, res: NextApiResponse<ApiResponse>) =>
 		var params = new Array();
 		let result:any = await gtLib.successValidate(challenge, validate, seccode, params);
 		if (result.status === 1) {
-			result = await register(alias, email, password, phone, code, ip)
+			const ip = requestIp.getClientIp(req) || ''
+			const result = await sendReset(email, ip)
 			res.json(result)
 		} else {
 			res.json({ status: 'err', msg: `invalid captcha` })

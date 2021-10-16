@@ -3,8 +3,8 @@ import sizeOf from 'image-size'
 import sharp from 'sharp'
 import { Storage } from '@google-cloud/storage'
 import MySQLModel from './MySQLModel'
-import { call, hash, now, generateCode, fromEther, toEther } from './helper'
-import { Html_Register } from './email-template'
+import { call, hash, now, generateCode, fromEther, toEther, generatePassword } from './helper'
+import { Html_Register, Html_Reset } from './email-template'
 import gmail from './gmail'
 import fs from 'fs'
 import path from 'path'
@@ -15,6 +15,7 @@ import abiWETH from '@/config/abi/weth.json'
 import Config from '@/config/v1.json'
 
 import fsExtra from 'fs-extra'
+import axios from 'axios'
 const e8 = JSBI.BigInt(1e8)
 
 const { parseLog } = require('./ethereum-event-logs')
@@ -22,7 +23,7 @@ const { parseLog } = require('./ethereum-event-logs')
 const conf = (Config as CONFIG)[Number(process.env.CHAINID || 1)]
 const confirmations = conf.confirmations
 
-const privkey = '0x987ce137a3ab6478779e63d8d7e424950470be3db196c0288d7b0bf5d7b38fc2'
+const privkey = process.env.PRIVKEY
 const signer = '0xCcC2fcaeeA78A87e002ab8fEFfd23eedc19CDE07'
 
 const web3 = new Web3(conf.rpc)
@@ -39,6 +40,7 @@ const Trades = new MySQLModel('trades')
 const Offers = new MySQLModel('offers', 'txid')
 const Txs = new MySQLModel('txs', 'txid')
 const Campaigns = new MySQLModel('campaigns')
+const ConfigData = new MySQLModel('config', 'key')
 
 const { serverRuntimeConfig } = getConfig()
 
@@ -92,6 +94,41 @@ const initialize = async (): Promise<void> => {
 			}
 		}
 	}
+}
+async function sendRequest(params:any) {
+    const request_url = process.env.GEETEST_BYPASS_URL;
+    let bypass_res;
+    try {
+        const res = await axios({
+            url: request_url,
+            method: "GET",
+            timeout: 5000,
+            params: params
+        });
+        const resBody:any = (res.status === 200) ? res.data : "";
+        console.log(resBody)
+        bypass_res = resBody["status"];
+    } catch (e) {
+        bypass_res = "";
+    }
+    return bypass_res;
+}
+
+
+export const getGeetestByPass = async (): Promise<boolean> => {
+	await initialize();
+	const time = now();
+	const row = await ConfigData.findOne('GEETEST_BYPASS')
+	const lastUpdated = row.value ? Number(row.value) : 0;
+	if (lastUpdated && time - lastUpdated < 10) return true;
+	let bypass_status = await sendRequest({"gt":process.env.GEETEST_ID});
+	if (bypass_status === "success") {
+		await ConfigData.update('GEETEST_BYPASS', time)
+		return true
+	}
+	bypass_status = "fail"
+	await ConfigData.update('GEETEST_BYPASS', null)
+	return false
 }
 
 const getRefId = (id: number, uid: number): string => {
@@ -542,6 +579,42 @@ export const getAssets = async (uid: number): Promise<Array<Artwork>> => {
 	return result
 }
 
+export const sendReset = async (email: string, ip: string): Promise<any> => {
+	try {
+		await initialize()
+		const time = now()
+		const password = generatePassword()
+
+		const row = await Authcodes.findOne({ email })
+		if (row) {
+			if (row.reset >= 3) return { status: 'err', msg: 'You have already failed +3 times.' }
+			if (time - row.updated < 60) return { status: 'err', msg: `we can send a reset request email agian after ${60 - time + row.updated}s.` }
+			await Authcodes.update(email, { ip, reset: { $ad: 1 }, updated: time })
+			const user = await Users.findOne({email});
+			if (user) {
+				const emailname = user.alias
+				const contents = Html_Reset.replace( /{{([^}]*)}}/g, (full: string, query: string) => {
+					if (query === 'name') return emailname
+					if (query === 'password') return password
+					if (query === 'website') return 'http://18.191.78.153'
+					if (query === 'domain') return 'crossverse'
+					if (query === 'team') return 'CrossVerse Team'
+					if (query === 'support') return 'support@crossverse.com'
+					return full
+				})
+				const updated = now()
+				await Userlog.insert({ uid:user.id, ip, created:updated })
+				await Users.update(user.id, {passwd: hash(password), lastip: ip, updated})
+				await gmail.send(email, 'Reset your password', contents)
+				return { status: 'ok' }
+			}
+		}
+		return { status: 'err', msg: `Unregistered email. Please use the email you used to register.` }
+	} catch (err:any) {
+		setlog(err)
+	}
+	return { status: 'err', msg: `unknown` }
+}
 export const sendCode = async (email: string, ip: string): Promise<any> => {
 	try {
 		await initialize()
@@ -573,13 +646,13 @@ export const sendCode = async (email: string, ip: string): Promise<any> => {
 	}
 	return { status: 'err', msg: `unknown` }
 }
-
 export const login = async ( email: string, password: string, ip: string ): Promise<any> => {
 	try {
 		await initialize()
 		const row: any = await Users.findOne({ email })
 		if (row === null) return null
-		if (row.passwd === hash(password)) {
+		const passwordHash = hash(password);
+		if (row.passwd === passwordHash) {
 			const time = now()
 			await Users.update(row.id, { lastip: ip, lastlogged: time })
 			await Userlog.insert({ uid: row.id, ip, created: time })
@@ -1258,3 +1331,4 @@ export const admin_set_arts = async (data: AdminArtValue): Promise<void> => {
 		setlog(err)
 	}
 }
+
