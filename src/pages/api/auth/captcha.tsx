@@ -11,7 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<ApiResponse>) =>
         client_type 客户端类型，web：电脑上的浏览器；h5：手机上的浏览器，包括移动应用内完全内置的web_view；native：通过原生sdk植入app应用的方式；unknown：未知
         ip_address 客户端请求sdk服务器的ip地址
      */
-
+	console.log(req);
 	const gtLib = new GeetestLib(process.env.GEETEST_ID, process.env.GEETEST_KEY);
 	const digestmod = "md5";
 	const userId = "test";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Form, Row } from 'antd'
 
 import Button from '@/components/Button'
@@ -15,7 +15,7 @@ let captcha:any = null;
 
 const SignUpPage: React.FC = () => {
 	const [form] = Form.useForm()
-	const [status, setStatus] = useState({
+	const [status, setStatus] = React.useState({
 		alias: '',
 		email: '',
 		password: '',
@@ -30,8 +30,8 @@ const SignUpPage: React.FC = () => {
 		geeTest: 0,
 		verify:null
 	})
-	const [time, setTime] = useState(now())
-	useEffect(() => {
+	const [time, setTime] = React.useState(now())
+	React.useEffect(() => {
 		const timer = setTimeout(() => setTime(now()), 1000)
 		return () => clearTimeout(timer)
 	})

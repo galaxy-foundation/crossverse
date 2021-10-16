@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Form, Row } from 'antd'
 import Link from 'next/link'
 import Page from '@/components/Page'
 import PageTitle from '@/components/Page/Title'
 import styles from './index.module.scss'
-import { now, call, request } from '../../utils/helper'
+import { call, request } from '../../utils/helper'
 import { Helmet } from 'react-helmet'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
@@ -15,7 +15,7 @@ let captcha:any = null;
 
 const ResetPasswordPage: React.FC = () => {
 	const [form] = Form.useForm()
-	const [status, setStatus] = useState({
+	const [status, setStatus] = React.useState({
 		email: '',
 		sent: false,
 		errmsg: null,
