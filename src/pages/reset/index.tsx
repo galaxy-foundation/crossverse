@@ -86,10 +86,10 @@ const ResetPasswordPage: React.FC = () => {
 				</PageTitle>
 				<Row justify="center">
 					{status.sent ? (
-						<>
-							<p style={{ color: 'green' }}>You have submitted a password reset request.</p>
-							<p>Please your email.</p>
-						</>
+						<div>
+							<h5 style={{ color: 'green' }}>You have submitted a password reset request.</h5>
+							<h5>Please check your email.</h5>
+						</div>
 					) : (
 						<Form className={`${styles.form} ant-col`} form={form} style={{ flex: '1 1 auto' }} onFinish={onSubmit}>
 							<Form.Item className={styles.formItem} name="email" rules={[{required: true, message: 'Email required'}, {type: 'email', message: 'Email should be correct format.'}]}>
