@@ -16,8 +16,11 @@ export default async (
 			} else if (newpass!==confirmpass) {
 				return res.json({ status:'err', msg:'The new password does not match the confirm password.' })
 			} else {
-				await setPassword( id, oldpass, newpass )
-				return res.json({ status:'ok' })
+				const result = await setPassword( id, oldpass, newpass )
+				if (result) {
+					return res.json({ status:'ok' })
+				}
+				return res.json({ status:'err', msg: 'failed' })
 			}
 		}
 	} catch (err:any) {

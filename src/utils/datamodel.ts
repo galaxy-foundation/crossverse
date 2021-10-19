@@ -1208,7 +1208,7 @@ export const setPassword = async (uid: number, oldpass: string, newpass: string)
 		await initialize()
 		if (global.users[uid]) {
 			const row = await Users.findOne(uid)
-			if (row && row.password === hash(oldpass)) {
+			if (row && row.passwd === hash(oldpass)) {
 				await Users.update(uid, {passwd: hash(newpass), updated: now()})
 				return true
 			}
