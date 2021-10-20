@@ -45,6 +45,9 @@ const ConfigData = new MySQLModel('config', 'key')
 const { serverRuntimeConfig } = getConfig()
 
 const keyFilename = path.join( serverRuntimeConfig.PROJECT_ROOT, './src/config/gcp.json' )
+
+console.log(keyFilename);
+
 const storage = new Storage({ keyFilename })
 const bucketName: string = process.env.GOOGLE_BUCKET || ''
 const bucket = storage.bucket(bucketName)
