@@ -197,6 +197,7 @@ const uploadToGCP = (filename: string, buffer: any) => {
 			blobStream.on('finish', () => resolve(`https://storage.googleapis.com/${bucket.name}/${blob.name}`))
 			blobStream.end(buffer)
 		} catch (err:any) {
+			setlog(err)
 			resolve({ err: `Could not upload the file: ${filename}. ${err}` })
 		}
 	})
