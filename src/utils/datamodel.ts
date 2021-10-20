@@ -194,6 +194,7 @@ const deleteFromGCP = async (files: Array<string>): Promise<void> => {
 const uploadToGCP = (filename: string, buffer: any) => {
 	return new Promise((resolve) => {
 		try {
+			console.log(filename, buffer.length)
 			const blob = bucket.file(filename)
 			const blobStream = blob.createWriteStream({ resumable: false })
 			blobStream.on('error', (err) => resolve({ err: err.message }))
@@ -823,6 +824,7 @@ export const updateCampaign = async ({ title, subtitle, lasttime, file }: Campai
 				await sharp(tempfile).resize(w, h).toFile(tempfile2)
 				const resUpload: any = await uploadToGCP(filename, fs.readFileSync(tempfile2))
 				if (!resUpload || (resUpload && resUpload.err)) {
+					setlog(resUpload ? resUpload.err : `Google cloud unknown error` )
 					return { status: 'err', msg: `Google cloud upload error` }
 				}
 				data.banner = resUpload
