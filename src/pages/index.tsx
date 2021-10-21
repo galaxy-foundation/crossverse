@@ -38,15 +38,15 @@ const HomePage = ({isDesktop, isMobile, recommends, sales, resales, ethPrice}: H
 					dots
 					images={[
 						{
-							image: '/images/download/carousel.png',
+							image: '/images/carousel/index-1.png',
 							key: 1,
 						},
 						{
-							image: '/images/download/carousel.png',
+							image: '/images/carousel/index.png',
 							key: 2,
 						},
 						{
-							image: '/images/download/carousel.png',
+							image: '/images/carousel/index.png',
 							key: 3,
 						},
 					]}
