@@ -42,11 +42,11 @@ const HomePage = ({isDesktop, isMobile, recommends, sales, resales, ethPrice}: H
 							key: 1,
 						},
 						{
-							image: '/images/carousel/index.png',
+							image: '/images/carousel/index-1.png',
 							key: 2,
 						},
 						{
-							image: '/images/carousel/index.png',
+							image: '/images/carousel/index-1.png',
 							key: 3,
 						},
 					]}
