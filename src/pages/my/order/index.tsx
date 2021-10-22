@@ -108,7 +108,7 @@ const MyOrderPage = ({wons, bids}: MyOrderProps):JSX.Element => {
 				<PageTitle className={styles.subTitle} fontWeight="Medium">
 					Bid History
 				</PageTitle>
-				{status.bids.length ? <table>
+				{status.bids.length ? <table style={{width:'100%'}} cellPadding={5}>
 					<thead>
 						<tr>
 							<th style={{ textAlign: 'left' }}>
