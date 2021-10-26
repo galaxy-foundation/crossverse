@@ -5,7 +5,7 @@ import { Storage } from '@google-cloud/storage'
 import MySQLModel from './MySQLModel'
 import { call, hash, now, generateCode, fromEther, toEther, generatePassword } from './helper'
 import { Html_Register, Html_Reset } from './email-template'
-import gmail from './gmail'
+/* import gmail from './gmail' */
 import fs from 'fs'
 import path from 'path'
 import getConfig from 'next/config'
@@ -16,6 +16,16 @@ import Config from '@/config/v1.json'
 
 import fsExtra from 'fs-extra'
 import axios from 'axios'
+import * as nodemailer from 'nodemailer'
+
+const SMTPHOST = process.env.SMTP || ''
+const SMTPPORT = Number(process.env.SMTP_PORT)
+const SMTPUSER = process.env.SMTP_USER || ''
+const SMTPPASS = process.env.SMTP_PSSS || ''
+console.log(SMTPPORT)
+
+
+
 const e8 = JSBI.BigInt(1e8)
 
 const { parseLog } = require('./ethereum-event-logs')
@@ -126,11 +136,11 @@ export const getGeetestByPass = async (): Promise<boolean> => {
 	if (lastUpdated && time - lastUpdated < 10) return true;
 	let bypass_status = await sendRequest({"gt":process.env.GEETEST_ID});
 	if (bypass_status === "success") {
-		await ConfigData.update('GEETEST_BYPASS', time)
+		await ConfigData.update('GEETEST_BYPASS', {value:time})
 		return true
 	}
 	bypass_status = "fail"
-	await ConfigData.update('GEETEST_BYPASS', null)
+	await ConfigData.update('GEETEST_BYPASS', {value:null})
 	return false
 }
 
@@ -610,7 +620,7 @@ export const sendReset = async (email: string, ip: string): Promise<any> => {
 				const updated = now()
 				await Userlog.insert({ uid:user.id, ip, created:updated })
 				await Users.update(user.id, {passwd: hash(password), lastip: ip, updated})
-				await gmail.send(email, 'Reset your password', contents)
+				await sendEmail(email, 'Reset your password', contents)
 				return { status: 'ok' }
 			}
 		}
@@ -644,13 +654,43 @@ export const sendCode = async (email: string, ip: string): Promise<any> => {
 			if (query === 'support') return 'support@crossverse.com'
 			return full
 		})
-		await gmail.send(email, 'Verify your registration', contents)
+		await sendEmail(email, 'Verify your registration', contents)
 		return { status: 'ok' }
 	} catch (err:any) {
 		setlog(err)
 	}
 	return { status: 'err', msg: `unknown` }
 }
+
+const sendEmail = async (to:string, subject:string, html:string) => {
+	// await gmail.send(to, subject, html);
+	 // send mail with defined transport object
+	return await new Promise(resolve=>{
+		const smtpTransport = nodemailer.createTransport({
+			host: SMTPHOST,
+			port: SMTPPORT,
+			auth: {
+				user: SMTPUSER,
+				pass: SMTPPASS
+			}
+		});
+
+		smtpTransport.sendMail({
+			from: process.env.SMTP_USER,
+			to,
+			subject,
+			html
+		}, (error, info) => {
+			if (error) {
+				resolve(null)
+				return console.log(error.message);
+			}
+			console.log('Message sent: %s', info.messageId);
+			resolve(null)
+		});
+	})
+}
+
 export const login = async ( email: string, password: string, ip: string ): Promise<any> => {
 	try {
 		await initialize()
