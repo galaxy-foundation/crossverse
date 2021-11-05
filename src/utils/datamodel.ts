@@ -709,7 +709,7 @@ export const login = async ( email: string, password: string, ip: string ): Prom
 	return null
 }
 
-export const register = async ( alias: string, email: string, password: string, code: string, ip: string ): Promise<ApiResponse> => {
+export const register = async ( alias:string, email:string, password: string, code: string, ip: string ): Promise<ApiResponse> => {
 	try {
 		await initialize()
 		let row: any = await Authcodes.findOne({ email })
