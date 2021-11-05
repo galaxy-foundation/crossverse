@@ -20,7 +20,6 @@ const SignUpPage: React.FC = () => {
 		email: '',
 		password: '',
 		confirm: '',
-		phone: '',
 		code: '',
 		sent: 0,
 		msg: null,
@@ -90,7 +89,7 @@ const SignUpPage: React.FC = () => {
 		} else if (status.geeTest===100) {
 			if (status.sent && status.verify) {
 				const verify:any = status.verify;
-				const data = await call('/api/auth/register', {alias:status.alias, email:status.email, password:status.password, phone:status.phone, code:status.code, ...verify})
+				const data = await call('/api/auth/register', {alias:status.alias, email:status.email, password:status.password, code:status.code, ...verify})
 				if (data) {
 					if (data.status === 'ok') {
 						changeStatus({ errmsg: null, success: true })
@@ -135,9 +134,6 @@ const SignUpPage: React.FC = () => {
 							</Form.Item>
 							<Form.Item style={{display:status.geeTest===100?'none':''}} className={styles.formItem} name="confirm" rules={[{required: true, message:'password confirm required'}]}>
 								<Input circle type="password" className={styles.input} placeholder="Confirm password" value={status.confirm || ''} onChange={(e) => changeStatus({errmsg: null, confirm: e.target.value.trim()})}/>
-							</Form.Item>
-							<Form.Item style={{display:status.geeTest===100?'none':''}} className={styles.formItem} name="mobile" rules={[{required: true, message: 'Mobile required'}]}>
-								<Input circle className={styles.input} placeholder="Mobile phone No." value={status.phone || ''} onChange={(e) => changeStatus({errmsg: null, phone: e.target.value.trim()})}/>
 							</Form.Item>
 							<div style={{padding:20, display:status.geeTest!==0?'':'none'}}>
 								<div id="captcha" style={{display:status.geeTest===100?'none':''}}>

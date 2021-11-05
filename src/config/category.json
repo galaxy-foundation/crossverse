@@ -5,14 +5,10 @@
 	},
 		{
 		"value":10,
-		"label":"Chocolate"
+		"label":"brand"
 	},
 	{
 		"value":20,
-		"label":"Strawberry"
-	},
-	{
-		"value":30,
-		"label":"Vanilla"
+		"label":"artist"
 	}
 ]

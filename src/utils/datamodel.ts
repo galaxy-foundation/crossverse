@@ -709,21 +709,21 @@ export const login = async ( email: string, password: string, ip: string ): Prom
 	return null
 }
 
-export const register = async ( alias: string, email: string, password: string, phone: string, code: string, ip: string ): Promise<ApiResponse> => {
+export const register = async ( alias: string, email: string, password: string, code: string, ip: string ): Promise<ApiResponse> => {
 	try {
 		await initialize()
 		let row: any = await Authcodes.findOne({ email })
 		if (row && row.email === email) {
 			if (row.code === code) {
-				row = await Users.findOne({ $or: [{ email }, { phone }] })
+				row = await Users.findOne({ email })
 				if (row === null) {
 					const created = now()
-					const uid = await Users.insert({ alias, email, phone, passwd: hash(password), lastip: ip, created })
+					const uid = await Users.insert({ alias, email, passwd: hash(password), lastip: ip, created })
 					updateGlobalUser({ id: uid, alias, about: '' })
 					await Userlog.insert({ uid, ip, created })
 					return { status: 'ok' }
 				} else {
-					return { status: 'err', msg: 'exists email or phone number' }
+					return { status: 'err', msg: 'exists email' }
 				}
 			} else {
 				return { status: 'err', msg: 'invalid verify code' }
