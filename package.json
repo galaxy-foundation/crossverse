@@ -6,7 +6,7 @@
   "scripts": {
     "start-win": "SET NODE_ENV=production && SET PORT=80 && next start",
     "build-win": "rimraf .next && next build",
-    "start": "NODE_ENV=production PORT=80 next start",
+    "start": "NODE_ENV=production PORT=8080 next start",
     "build": "rm -rf .next && next build",
     "dev": "set NODE_OPTIONS=--inspect && next dev"
   },
