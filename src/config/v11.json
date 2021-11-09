@@ -29,9 +29,9 @@
         "explorer": "https://testnet-explorer.icicbchain.org",
         "blocktime": 1,
         "confirmations": 1,
-        "storefront": "0xcACD060583f8f6dfa3dF03914a2D815d1BA0149f",
+        "storefront": "0xfCA96050B7793A4C78D58EbfDA0C8A3890799C9e",
         "weth": {
-            "contract": "0x7F23e8D364E8eB13958864DC7d597BABf93eDce3",
+            "contract": "0x0Bc307A58e258455fD3fA58E6De854d65914cF39",
             "precision": 18
         }
     }

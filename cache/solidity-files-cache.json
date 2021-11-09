@@ -75,8 +75,8 @@
       ]
     },
     "E:\\freelancing\\090721-CN-crossverse\\source\\contracts\\StoreFront.sol": {
-      "lastModificationDate": 1636165925306,
-      "contentHash": "cad7b9dc59262bfdb7694a31bfcefd0f",
+      "lastModificationDate": 1636459513163,
+      "contentHash": "2a46b9dfa1d1a071970a8b326f2c3311",
       "sourceName": "contracts/StoreFront.sol",
       "solcConfig": {
         "version": "0.8.0",
@@ -1102,10 +1102,10 @@
         "Sig"
       ]
     },
-    "E:\\freelancing\\090721-CN-crossverse\\source\\contracts\\WETH9.sol": {
-      "lastModificationDate": 1636141315201,
-      "contentHash": "8f12793255a1e8e061f193e05d144668",
-      "sourceName": "contracts/WETH9.sol",
+    "E:\\freelancing\\090721-CN-crossverse\\source\\contracts\\WETH.sol": {
+      "lastModificationDate": 1636457524763,
+      "contentHash": "72f8fcdbc22bd22791c2f1220322e468",
+      "sourceName": "contracts/WETH.sol",
       "solcConfig": {
         "version": "0.8.0",
         "settings": {
@@ -1136,7 +1136,7 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "WETH9"
+        "WETH"
       ]
     }
   }

@@ -33,8 +33,8 @@ const { parseLog } = require('./ethereum-event-logs')
 const conf = (Config as CONFIG)[Number(process.env.CHAINID || 1)]
 const confirmations = conf.confirmations
 
-const privkey = process.env.PRIVKEY || ''
-const signer = '0xCcC2fcaeeA78A87e002ab8fEFfd23eedc19CDE07'
+const privkey = process.env.SIGNERKEY || ''
+const signer = process.env.SIGNER
 
 const web3 = new Web3(conf.rpc)
 
@@ -1286,7 +1286,6 @@ export const setMyWallet = async ( uid: number, address: string ): Promise<strin
 	}
 }
 
-
 export const wonInAuction = async (tokenid:number): Promise<void> => {
 	try {
 		await initialize()
@@ -1305,6 +1304,7 @@ export const wonInAuction = async (tokenid:number): Promise<void> => {
 		setlog(err)
 	}
 }
+
 export const checkArts = async (): Promise<void> => {
 	try {
 		await initialize()

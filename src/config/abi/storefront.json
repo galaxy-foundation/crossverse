@@ -676,7 +676,7 @@
         "inputs": [
             {
                 "internalType": "address",
-                "name": "_adminAddress",
+                "name": "_address",
                 "type": "address"
             }
         ],
@@ -753,7 +753,7 @@
         "inputs": [
             {
                 "internalType": "address",
-                "name": "_feeAddress",
+                "name": "_address",
                 "type": "address"
             }
         ],
@@ -766,7 +766,7 @@
         "inputs": [
             {
                 "internalType": "address",
-                "name": "_feeAddress",
+                "name": "_address",
                 "type": "address"
             }
         ],
@@ -779,7 +779,7 @@
         "inputs": [
             {
                 "internalType": "address",
-                "name": "_storeAddress",
+                "name": "_address",
                 "type": "address"
             }
         ],

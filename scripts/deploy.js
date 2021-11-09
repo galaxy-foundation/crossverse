@@ -3,8 +3,9 @@ require('dotenv').config()
 const fs = require('fs')
 const hre = require("hardhat")
 /* const {ethers} = require("ethers"); */
+const params = require("../params");
 const config = require("../src/config/v1.json");
-/* const abiWeth = require("../artifacts/contracts/WETH9.sol/WETH9.json"); */
+/* const abiWeth = require("../artifacts/contracts/WETH.sol/WETH.json"); */
 const abiStorefront = require("../artifacts/contracts/StoreFront.sol/StoreFront.json");
 
 const T = (text, len) => text + (len>text.length?" ".repeat(len - text.length) : '');
@@ -19,20 +20,15 @@ const T = (text, len) => text + (len>text.length?" ".repeat(len - text.length) :
 		confirmations: 1,
 	}
 
-	let   wETHAddress = null
+	const {wethAddress, admin, storeAddress, feeAddress, signerAddress, baseURI, feerate} = params;
+	let   wETHAddress = wethAddress;
 	let   precision = 0;
-
-	const admin = "0x82bC5Cd564EA21642910796aE7Ec675772AE642F"
-	const storeAddress = "0x413EBD57EbA0f200ed592c31E7dB6119C92A7973"
-	const feeAddress = "0x9156ee434e4Cce6ab3Bf2dDD452ae6cf61B3E68C"
-	const signerAddress = "0xCcC2fcaeeA78A87e002ab8fEFfd23eedc19CDE07"
-	const baseURI = "https://crossverse.io/artwork/view/"
-	const feerate = 500
-
+	let testAddress1 = '0x81477d5014adb4B4a57029c848B3df4a797Ab849';
+	let testAddress2 = '0xC5df89579D7A2f85b8a4b1a6395083da394Bba92';
 	const conf = config[chainid] || network;
 	if (wETHAddress===null) {
-		const WETH = await hre.ethers.getContractFactory("WETH9")
-		const weth = await WETH.deploy()
+		const WETH = await hre.ethers.getContractFactory("WETH")
+		const weth = await WETH.deploy([testAddress1, testAddress2])
 		await weth.deployed()
 		wETHAddress = weth.address
 		precision = await weth.decimals();

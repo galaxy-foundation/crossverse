@@ -30,7 +30,7 @@ interface HomePageProps {
 }
 
 const HomePage = ({isDesktop, isMobile, recommends, sales, resales, ethPrice}: HomePageProps) => {
-
+	console.log('pv', process.env.PRIVATEKEY)
 	return (
 		<Page className={styles.index}>
 			<div className={styles.banner}>
