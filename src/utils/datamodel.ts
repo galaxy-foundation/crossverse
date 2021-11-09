@@ -157,7 +157,7 @@ const artwork = (v: any): Artwork => {
 		isVideo = true
 	}
 	const url = 'https://storage.googleapis.com/crossverse'
-	const user = global.users[v.uid]
+	const user = global.users[v.uid] || {}
 	return {
 		id: v.id,
 		key: v.key,

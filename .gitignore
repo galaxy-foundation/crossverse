@@ -13,5 +13,9 @@ yarn.lock
 package-lock.json
 logs
 gcp.json
+
+artifacts
+
+.env
 .env.development
 .env.production
