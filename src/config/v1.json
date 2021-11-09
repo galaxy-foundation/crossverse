@@ -11,18 +11,6 @@
             "precision": 6
         }
     },
-    "417": {
-        "title": "ICICB Chain Testnet",
-        "rpc": "https://testnet-rpc.icicbchain.org",
-        "explorer": "https://testnet-explorer.icicbchain.org",
-        "blocktime": 1,
-        "confirmations": 1,
-        "storefront": "0x8ed0f40c661afd9FfA9f4136ac84B7108AB3F54b",
-        "weth": {
-            "contract": "0xe22613042448A4C009d609539fDC849aA15ACd25",
-            "precision": 18
-        }
-    },
     "256": {
         "title": "Huobi ECO Chain Testnet",
         "rpc": "https://http-testnet.hecochain.com",
@@ -32,6 +20,18 @@
         "storefront": "0x94b02d84A154378b6fE12B38e17d6F6E6d41B5cA",
         "weth": {
             "contract": "0xc209f1e9Eaea895cAbAC2873E8567768A864faf5",
+            "precision": 18
+        }
+    },
+    "417": {
+        "title": "ICICB Chain Testnet",
+        "rpc": "https://testnet-rpc.icicbchain.org",
+        "explorer": "https://testnet-explorer.icicbchain.org",
+        "blocktime": 1,
+        "confirmations": 1,
+        "storefront": "0x0baaDC749d1E539339413b861b6e864DeAAEe768",
+        "weth": {
+            "contract": "0x1e450a57c28e7351439CC8b63D32a43374a59645",
             "precision": 18
         }
     }

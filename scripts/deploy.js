@@ -21,6 +21,7 @@ const T = (text, len) => text + (len>text.length?" ".repeat(len - text.length) :
 	}
 
 	const {wethAddress, admin, storeAddress, feeAddress, signerAddress, baseURI, feerate} = params;
+	console.log(admin, storeAddress, feeAddress, signerAddress, baseURI, feerate);
 	let   wETHAddress = wethAddress;
 	let   precision = 0;
 	let testAddress1 = '0x81477d5014adb4B4a57029c848B3df4a797Ab849';
@@ -34,6 +35,7 @@ const T = (text, len) => text + (len>text.length?" ".repeat(len - text.length) :
 		precision = await weth.decimals();
 		console.log(T("WETH deployed to:", 25).green, wETHAddress.yellow)
 	}
+
 	const StoreFront = await hre.ethers.getContractFactory("StoreFront")
 	const storeFront = await StoreFront.deploy(wETHAddress, precision, admin, storeAddress, feeAddress, signerAddress, baseURI, feerate)
 	await storeFront.deployed()
@@ -41,7 +43,7 @@ const T = (text, len) => text + (len>text.length?" ".repeat(len - text.length) :
 	console.log('writing abis and addresses...'.blue);
 	/* -------------- writing... -----------------*/
 	fs.writeFileSync(`./src/config/abi/storefront.json`,  JSON.stringify(abiStorefront.abi, null, 4));
-	fs.writeFileSync(`./src/config/v11.json`,  JSON.stringify({...config, [chainid]:{...conf, storefront:storeFront.address, weth:{contract:wETHAddress, precision}}}, null, 4))
+	fs.writeFileSync(`./src/config/v1.json`,  JSON.stringify({...config, [chainid]:{...conf, storefront:storeFront.address, weth:{contract:wETHAddress, precision}}}, null, 4))
 })().then(() => process.exit(0)).catch((error) => {
 	console.error(error)
 	process.exit(1)
