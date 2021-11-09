@@ -24,7 +24,7 @@
         }
     },
     "417": {
-        "title": "ICICB Chain Testnet",
+        "title": "ICICB Chain Testnet", 
         "rpc": "https://testnet-rpc.icicbchain.org",
         "explorer": "https://testnet-explorer.icicbchain.org",
         "blocktime": 1,
