@@ -8,7 +8,7 @@ const config = require("../src/config/v1.json");
 /* const abiWeth = require("../artifacts/contracts/WETH.sol/WETH.json"); */
 const abiStorefront = require("../artifacts/contracts/StoreFront.sol/StoreFront.json");
 
-const T = (text, len) => text + (len>text.length?" ".repeat(len - text.length) : '');
+const T = (text, len) => text + (len>text.length ? " ".repeat(len - text.length) : '');
 
 (async ()=>{
 	const chainid = Number(process.env.CHAINID)

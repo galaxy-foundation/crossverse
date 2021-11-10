@@ -1,14 +1,14 @@
 {
     "1": {
         "title": "Ethereum mainnet",
-        "rpc": "http://185.64.104.17",
+        "rpc": "https://mainnet.infura.io/v3/b25ceaa391d24b6da7dd81a4c96b4b95",
         "explorer": "https://etherscan.io",
         "blocktime": 15,
         "confirmations": 12,
-        "storefront": "",
+        "storefront": "0x501A988A302847cd4A6f4734E37Ab330F0b49F38",
         "weth": {
-            "contract": "",
-            "precision": 6
+            "contract": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "precision": 0
         }
     },
     "256": {
@@ -24,7 +24,7 @@
         }
     },
     "417": {
-        "title": "ICICB Chain Testnet", 
+        "title": "ICICB Chain Testnet",
         "rpc": "https://testnet-rpc.icicbchain.org",
         "explorer": "https://testnet-explorer.icicbchain.org",
         "blocktime": 1,
