@@ -49,7 +49,7 @@ module.exports = {
 			accounts: [process.env.PRIVATEKEY]
 		},
 		ethereum :{
-			url: "https://main-light.eth.linkpool.io/",
+			url: "https://mainnet.infura.io/v3/b25ceaa391d24b6da7dd81a4c96b4b95",
 			accounts: [process.env.PRIVATEKEY]
 		},
 		matic :{

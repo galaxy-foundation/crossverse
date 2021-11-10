@@ -13,21 +13,21 @@ const T = (text, len) => text + (len>text.length?" ".repeat(len - text.length) :
 (async ()=>{
 	const chainid = Number(process.env.CHAINID)
 	const network = {
-		title: "ICICB Chain Testnet",
-		rpc: "https://testnet-rpc.icicbchain.org",
-		explorer: "https://testnet-explorer.icicbchain.org",
-		blocktime: 1,
-		confirmations: 1,
+		title: "Ethereum mainnet",
+		rpc: "https://mainnet.infura.io/v3/b25ceaa391d24b6da7dd81a4c96b4b95",
+		explorer: "https://etherscan.io/",
+		blocktime: 15,
+		confirmations: 12,
 	}
 
 	const {wethAddress, admin, storeAddress, feeAddress, signerAddress, baseURI, feerate} = params;
-	console.log(admin, storeAddress, feeAddress, signerAddress, baseURI, feerate);
+	/* console.log(admin, storeAddress, feeAddress, signerAddress, baseURI, feerate); */
 	let   wETHAddress = wethAddress;
 	let   precision = 0;
-	let testAddress1 = '0x81477d5014adb4B4a57029c848B3df4a797Ab849';
-	let testAddress2 = '0xC5df89579D7A2f85b8a4b1a6395083da394Bba92';
 	const conf = config[chainid] || network;
 	if (wETHAddress===null) {
+		let testAddress1 = '0x81477d5014adb4B4a57029c848B3df4a797Ab849';
+		let testAddress2 = '0xC5df89579D7A2f85b8a4b1a6395083da394Bba92';
 		const WETH = await hre.ethers.getContractFactory("WETH")
 		const weth = await WETH.deploy([testAddress1, testAddress2])
 		await weth.deployed()

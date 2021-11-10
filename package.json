@@ -17,7 +17,7 @@
     "deploy_icicb": "npx hardhat run --network icicb scripts/deploy.js",
     "deploy_bsctest": "npx hardhat run --network bsctestnet scripts/deploy.js",
     "deploy_bsc": "npx hardhat run --network bsc scripts/deploy.js",
-    "deploy": "npx hardhat run --network bsc scripts/deploy-production.js"
+    "deploy": "npx hardhat run --network ethereum scripts/deploy.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
