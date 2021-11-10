@@ -1,7 +1,7 @@
 {
     "1": {
         "title": "Ethereum mainnet",
-        "rpc": "https://mainnet.infura.io/v3/b25ceaa391d24b6da7dd81a4c96b4b95",
+        "rpc": "https://ethereum-rpc.icicbchain.org/eth",
         "explorer": "https://etherscan.io",
         "blocktime": 15,
         "confirmations": 12,

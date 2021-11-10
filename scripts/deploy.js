@@ -23,7 +23,7 @@ const T = (text, len) => text + (len>text.length ? " ".repeat(len - text.length)
 	const {wethAddress, admin, storeAddress, feeAddress, signerAddress, baseURI, feerate} = params;
 	/* console.log(admin, storeAddress, feeAddress, signerAddress, baseURI, feerate); */
 	let   wETHAddress = wethAddress;
-	let   precision = 0;
+	let   precision = 18;
 	const conf = config[chainid] || network;
 	if (wETHAddress===null) {
 		let testAddress1 = '0x81477d5014adb4B4a57029c848B3df4a797Ab849';
