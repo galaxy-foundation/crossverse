@@ -8,7 +8,7 @@
         "storefront": "0x501A988A302847cd4A6f4734E37Ab330F0b49F38",
         "weth": {
             "contract": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-            "precision": 0
+            "precision": 18
         }
     },
     "256": {
