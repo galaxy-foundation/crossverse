@@ -1,7 +1,7 @@
 {
     "1": {
         "title": "Ethereum mainnet",
-        "rpc": "https://ethereum-rpc.icicbchain.org/eth",
+        "rpc": "http://185.64.104.17",
         "explorer": "https://etherscan.io",
         "blocktime": 15,
         "confirmations": 12,
