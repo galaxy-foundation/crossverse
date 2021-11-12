@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production PORT=3000 next start",
     "build": "rm -rf .next && next build",
     "dev": "set NODE_OPTIONS=--inspect && next dev",
+    "merge": "npx sol-merger --export-plugin SPDXLicenseRemovePlugin './contracts/StoreFront.sol' compiled",
     "deploy_test": "npx hardhat test",
     "deploy_fantomtest": "npx hardhat run --network fantomtestnet scripts/deploy.js",
     "deploy_ganache": "npx hardhat run --network ganache scripts/deploy.js",
@@ -100,6 +101,7 @@
     "hardhat": "^2.6.8",
     "node-sass": "4.13.1",
     "postcss-preset-env": "6.7.0",
+    "sol-merger": "^3.1.0",
     "svgo": "1.3.2",
     "svgo-loader": "2.2.1",
     "typescript": "4.3.4"
