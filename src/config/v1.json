@@ -1,7 +1,7 @@
 {
     "1": {
         "title": "Ethereum mainnet",
-        "rpc": "http://185.64.104.17",
+        "rpc": "https://crossverse.io/api/ethereum/rpc",
         "explorer": "https://etherscan.io",
         "blocktime": 15,
         "confirmations": 12,
